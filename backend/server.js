@@ -110,7 +110,7 @@ io.on('connection', (socket) => {
 });
 
 // Define PORT
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 6000;
 
 // Serve Frontend from `frontend/dist`
 const frontendPath = path.join(__dirname, '..', 'frontend', 'dist');

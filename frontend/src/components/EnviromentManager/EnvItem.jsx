@@ -14,7 +14,7 @@ const EnvItem = ({ env, updateEnvVariable, deleteEnvVariable }) => {
             { value: newValue } // Send only the updated value
         );
         updateEnvVariable(response.data); // Update the list in the parent
-        setIsEditing(false); // Exit editing mode
+        setIsEditing(false); 
     } catch (error) {
         console.error('Error updating environment variable:', error);
     }
