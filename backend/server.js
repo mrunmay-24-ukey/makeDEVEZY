@@ -114,12 +114,12 @@ const PORT = process.env.PORT || 6000;
 
 // Serve Frontend from `frontend/dist`
 const frontendPath = path.join(__dirname, '..', 'frontend', 'dist');
+/* 
+app.use(express.static(frontendPath)); */
 
-app.use(express.static(frontendPath));
-
-app.get('*', (req, res) => {
+/* app.get('*', (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
-});
+}); */
 
 // Use server.listen instead of app.listen
 server.listen(PORT, () => {
