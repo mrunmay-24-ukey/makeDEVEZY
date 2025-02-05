@@ -19,7 +19,7 @@ const Navbar = () => {
               <NavItem to="/api-tester" icon={<Zap className="h-5 w-5" />} text="API Tester" />
               <NavItem to="/env-manager" icon={<Database className="h-5 w-5" />} text="Env Manager" />
               <NavItem to="/documentation" icon={<FileText className="h-5 w-5" />} text="Docs" />
-              <NavItem to="/generator" icon={<Box className="h-5 w-5" />} text="Generator" />
+              <NavItem to="/codecollab" icon={<Box className="h-5 w-5" />} text="Code Collab" />
             </div>
           </div>
         </div>

@@ -9,7 +9,8 @@ import Snippets from './pages/Snippets.jsx'
 import ApiTester from './pages/ApiTester.jsx'
 import EnvManager from './pages/EnvManager.jsx'
 import Documentation from './pages/Documentation.jsx'
-import Generator from './pages/Generator.jsx'
+
+import CodeCollab from './pages/CodeCollab.jsx'
 
 
 const router = createBrowserRouter([
@@ -39,8 +40,8 @@ const router = createBrowserRouter([
         element: <Documentation />,
       },
       {
-        path: 'generator',
-        element: <Generator />,
+        path: 'codecollab',
+        element: <CodeCollab />,
       },
     ],
   },
