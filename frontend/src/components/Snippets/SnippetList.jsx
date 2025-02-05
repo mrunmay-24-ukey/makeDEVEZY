@@ -7,10 +7,12 @@ function SnippetList() {
   const [snippets, setSnippets] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const API_BASE_URL = 'https://makedevezy.onrender.com'
+
   useEffect(() => {
     const fetchSnippets = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/snippets');
+        const response = await axios.get(`${API_BASE_URL}/api/snippets`);
         setSnippets(response.data);
         setLoading(false);
       } catch (error) {
@@ -22,7 +24,7 @@ function SnippetList() {
 
   const handleAddSnippet = async (newSnippet) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/snippets', newSnippet);
+      const response = await axios.post(`${API_BASE_URL}/api/snippets`, newSnippet);
       setSnippets([...snippets, response.data]);
     } catch (error) {
       console.error('Error adding snippet:', error);
@@ -31,7 +33,7 @@ function SnippetList() {
 
   const handleDeleteSnippet = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/snippets/${id}`);
+      await axios.delete(`${API_BASE_URL}/api/snippets/${id}`);
       setSnippets(snippets.filter((snippet) => snippet._id !== id));
     } catch (error) {
       console.error('Error deleting snippet:', error);

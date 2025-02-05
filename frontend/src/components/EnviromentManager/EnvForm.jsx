@@ -5,6 +5,8 @@ const EnvForm = ({ addEnvVariable }) => {
   const [name, setName] = useState('');
   const [value, setValue] = useState('');
 
+  const API_BASE_URL = 'https://makedevezy.onrender.com'
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -14,7 +16,7 @@ const EnvForm = ({ addEnvVariable }) => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/env', { name, value });
+      const response = await axios.post(`${API_BASE_URL}/api/env`, { name, value });
       addEnvVariable(response.data); // Add new env variable to the state in the parent
       setName('');
       setValue('');

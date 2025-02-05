@@ -7,10 +7,12 @@ const EnvItem = ({ env, updateEnvVariable, deleteEnvVariable }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newValue, setNewValue] = useState(value);
 
+  const API_BASE_URL = 'https://makedevezy.onrender.com'
+
   const handleEdit = async () => {
     try {
         const response = await axios.put(
-            `http://localhost:5000/api/env/${env._id}`, // Use `_id` in the URL
+            `${API_BASE_URL}/api/env/${env._id}`, // Use `_id` in the URL
             { value: newValue } // Send only the updated value
         );
         updateEnvVariable(response.data); // Update the list in the parent
@@ -23,7 +25,7 @@ const EnvItem = ({ env, updateEnvVariable, deleteEnvVariable }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/env/${name}`);
+      await axios.delete(`${API_BASE_URL}/api/env/${name}`);
       deleteEnvVariable(_id); // Remove the variable from the state
     } catch (error) {
       console.error('Error deleting environment variable:', error);
